@@ -49,7 +49,3 @@ export class Character {
         }
     };
   }
-
-  let bowman = new Character('лучник', 'Bowman', this.health, this.level, 25, 25)
-
-  console.log(bowman)
