@@ -1,3 +1,3 @@
 import Character from "./character";
 
-export const daemon = new Character('name', 'Daemon', this.health, this.level, 10, 40);
+export const daemon = new Character('name', 'Daemon', 100, 1, 10, 40);

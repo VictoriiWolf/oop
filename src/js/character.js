@@ -1,4 +1,4 @@
-export class Character {
+export default class Character {
     constructor(name, type, health, level, attack, defence) {
         this.name = name;
         this.type = type;
@@ -11,7 +11,11 @@ export class Character {
             throw new Error('Too short name');
         } else if (name.length > 10) {
             throw new Error('Too long name');
-        };
+        } else if(typeof name !== 'string') {
+            throw new Error('Name is not string');
+        } else if(typeof type !== 'string') {
+            throw new Error('Type is not string');
+        }
   
         switch (this.type) {
             case 'Bowman':
@@ -31,21 +35,21 @@ export class Character {
                 throw new Error('This type is not correct');
         }
     };
-
-    levelUp(health, level, attack, defence) {
-        if(this.health !== 0) {
-        this.level++;
-        this.health = 100;
-        (this.attack / 100) * 0.2;
-        (this.defence / 100) * 0.2;
-        } else {
-            throw new Error('you are dead :(')
+  
+    levelUp() {
+        if(this.health <= 0) {
+            throw new Error('You are dead :(')
+        } else{
+            this.level ++;
+            this.attack = Math.ceil(this.attack * 1.2);
+            this.defence = Math.ceil(this.defence * 1.2);
+            this.health = 100;
         }
-    };
-    
+    }
+  
     damage(points) {
-        if(this.health !== 0) {
+        if(this.health >= 0) {
             this.health -= points * (1 - this.defence / 100)
         }
-    };
-  }
+    }
+}

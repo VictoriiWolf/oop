@@ -1,0 +1,20 @@
+environment:
+  nodejs_version: "18"
+
+branches:
+  only:
+    - master
+    - main
+
+cache: node_modules
+
+install:
+  - npm install
+
+build: off
+
+build_script:
+  - npm run build
+
+test_script:
+  - npm run lint && npm test

@@ -1,3 +1,3 @@
 import Character from "./character";
 
-export const swordsman = new Character('name', 'Swordsman', this.health, this.level, 40, 10);
+export const swordsman = new Character('name', 'Swordsman', 100, 1, 40, 10);

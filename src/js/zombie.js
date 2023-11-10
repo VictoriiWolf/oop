@@ -1,3 +1,3 @@
 import Character from "./character";
 
-export const zombie = new Character('', 'Zombie', this.health, this.level, 40, 10);
+export const zombie = new Character('User', 'Zombie', 100, 1, 40, 10);

@@ -1,3 +1,3 @@
 import Character from "./character";
 
-const bowman = new Character('Мечник', 'Bowman', this.health, this.level, 25, 25);
+export const bowman = new Character('Мечник', 'Bowman', 100, 1, 25, 25);
